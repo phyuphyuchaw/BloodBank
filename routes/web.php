@@ -14,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-    //return 'Hello Laravel';
+   // return view('welcome');
+    return 'Hello Laravel';
 });
 
 Route::get('/testing',function ($value=''){
 	return 'Thhis is a testing page!';
 });
+
+  Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
