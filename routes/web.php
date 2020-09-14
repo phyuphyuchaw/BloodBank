@@ -43,6 +43,8 @@ Route::get('/testing',function ($value=''){
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 
-Route::get('/', function () {
-  return 'welcome';
-});
+// Route::get('/', function () {
+//   return 'welcome';
+// });
+
+
