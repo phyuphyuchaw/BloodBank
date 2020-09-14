@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 */
 /*
 <<<<<<< HEAD
+/*<<<<<<< HEAD
+=======
+// <<<<<<< HEAD
+>>>>>>> cf1ee818be0b48c9d2db217eefce0f422aee8285
 /*Route::get('/', function () {
 <<<<<<< HEAD
    // return view('welcome');
@@ -36,8 +40,40 @@ Route::get('/testing',function ($value=''){
 >>>>>>> f308780851173f68fa6a53743d6e5ce1bbcb84f4
 });*/
 
+<<<<<<< HEAD
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 Route::resource('donors','DonorController');
 
 Route::resource('blogs','BlogController');
+=======
+// backend
+
+<<<<<<< HEAD
+  Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+
+// Frontend
+
+Route::get('/','PageController@home')->name('homepage');
+
+Route::get('about','PageController@about')->name('aboutpage');
+
+Route::get('contact','PageController@contact')->name('contactpage');
+
+Route::get('blog','PageController@blog')->name('blogpage');
+
+Route::get('loginform','PageController@login')->name('loginpage');
+
+Route::get('registerform','PageController@register')->name('registerpage');
+=======
+//   Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+// });
+
+Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+
+
+Route::get('/', function () {
+  return 'welcome';
+});
+>>>>>>> cf1ee818be0b48c9d2db217eefce0f422aee8285
+>>>>>>> 252a2600eede5f8d5a653dcd4591bbd33c2c941e
