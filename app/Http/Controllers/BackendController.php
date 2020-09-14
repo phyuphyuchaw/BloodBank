@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class BackendController extends Controller
 {
+<<<<<<< HEAD
     /**
      * Display a listing of the resource.
      *
@@ -81,4 +82,10 @@ class BackendController extends Controller
     {
         //
     }
+=======
+	public function dashboardfun($value='')
+	{
+    return view('backend.dashboard');
+	}
+>>>>>>> f7ea0d9361f3f09a5308cc37210279482e68b15b
 }

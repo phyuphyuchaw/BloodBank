@@ -17,7 +17,9 @@ Route::get('/', function () {
   return 'By Pauk';
 });
 
- 
+Route::get('/testing',function ($value=''){
+	return 'Thhis is a testing page!';
+});
 
- 
+Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
