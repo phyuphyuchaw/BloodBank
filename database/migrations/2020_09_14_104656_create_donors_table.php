@@ -15,6 +15,22 @@ class CreateDonorsTable extends Migration
     {
         Schema::create('donors', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->integer('age');
+            $table->string('gender');
+            $table->string('name');
+            $table->string('name');
+            $table->string('name');
+            $table->string('name');
+            $table->string('name');
+            $table->string('name');
+            $table->string('name');
+            $table->string('name');
+            $table->timestamps();
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade');
             $table->timestamps();
         });
     }
