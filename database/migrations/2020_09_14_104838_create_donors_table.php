@@ -18,14 +18,11 @@ class CreateDonorsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->integer('age');
             $table->string('gender');
-            $table->integer('bodyweight');
             $table->string('bloodgroup');
             $table->string('phone');
             $table->string('email');
             $table->string('address');
             $table->string('profile');
-            $table->string('password');
-            $table->string('confirm_password');
             $table->date('posting_date');
             $table->timestamps();
             $table->foreign('user_id')
