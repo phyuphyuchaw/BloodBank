@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
 <<<<<<< HEAD
    // return view('welcome');
     return 'Hello Laravel';
@@ -29,6 +28,8 @@ Route::get('/', function () {
 Route::get('/testing',function ($value=''){
 	return 'Thhis is a testing page!';
 >>>>>>> f308780851173f68fa6a53743d6e5ce1bbcb84f4
-});
+});*/
+
 
   Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+
