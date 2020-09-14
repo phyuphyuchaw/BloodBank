@@ -44,7 +44,7 @@
 </head>
 <body>
 
-  <!-- Navigation-->
+<!-- Navigation-->
   <div class="container-fluid">
 
     <div class="row shadow-sm p-3 bg-white rounded d-flex align-items-center">
@@ -53,13 +53,11 @@
         <span class="d-xl-none d-lg-none d-md-inline d-sm-inline d-inline  p-1 navslidemenu">
           <i class="icofont-navigation-menu"></i>
         </span>
-        <a href="{{route('homepage')}}">
-          <img src="{{ asset('frontend/logo/logo_big.jpg')}}" class="img-fluid d-xl-inline d-lg-inline d-md-none d-sm-none d-none">
+        <img src="../logo/logo_big.jpg" class="img-fluid d-xl-inline d-lg-inline d-md-none d-sm-none d-none">
 
-          <img src="{{ asset('frontend/logo/logo_med.jpg')}}" class="img-fluid d-xl-none d-lg-none d-md-inline d-sm-none d-none" style="width: 100px">
+        <img src="../logo/logo_med.jpg" class="img-fluid d-xl-none d-lg-none d-md-inline d-sm-none d-none" style="width: 100px">
 
-          <img src="{{ asset('frontend/logo/logo.jpg')}}" class="img-fluid d-xl-none d-lg-none d-md-none d-sm-inline d-inline pl-2" style="width: 30px">
-        </a>
+        <img src="../logo/logo.jpg" class="img-fluid d-xl-none d-lg-none d-md-none d-sm-inline d-inline pl-2" style="width: 30px">
       </div>
       
       <!-- Search Bar -->
@@ -68,39 +66,19 @@
           <div class="col-lg-8 col-2 ">
             <div class="has-search d-xl-block d-lg-block d-none ">
                 <div class="input-group">
-                    <input class="form-control pl-4 border-right-0 border" type="search" placeholder="Search" id="">
-                    <span class="input-group-append searchBtn">
-                        <div class="input-group-text bg-transparent">
-                          <i class="icofont-search"></i>
-                        </div>
-                    </span>
-                </div>
+                        <input class="form-control pl-4 border-right-0 border" type="search" placeholder="Search" id="">
+                        <span class="input-group-append searchBtn">
+                            <div class="input-group-text bg-transparent">
+                              <i class="icofont-search"></i>
+                            </div>
+                        </span>
+                    </div>
             </div>
           </div>
           <div class="col-lg-4 col-10">
-            @role('Customer')
-            <span classs="float-right d-xl-block d-lg-block d-md-block d-none">
-              <a id="navbarDropdown" class="nav-link dropdown-toggle loginLink" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                  {{ Auth::user()->name }}
-              </a>
+            <a href="" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-right"> Login | Sign-up </a>
 
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{ route('logout') }}"
-                     onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-                      {{ __('Logout') }}
-                  </a>
-
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                      @csrf
-                  </form>
-              </div>
-            </span>
-            @else
-            <span classs="float-right d-xl-block d-lg-block d-md-block d-none">
-              <a href="{{route('loginpage')}}" class="text-decoration-none loginLink"> Login </a> | <a href="{{route('registerpage')}}" class="text-decoration-none loginLink"> Sign-up </a>
-            </span>
-            @endrole
+            
           </div>
         </div>
       </div>
@@ -113,26 +91,26 @@
           <i class="icofont-search"></i>
         </div>
 
-        <a href="{{route('shoppingcartpage')}}" class="text-decoration-none d-xl-inline d-lg-inline d-md-inline d-sm-none d-none shoppingcartLink"> 
+        <a href="" class="text-decoration-none d-xl-inline d-lg-inline d-md-inline d-sm-none d-none shoppingcartLink"> 
           <i class="icofont-shopping-cart"></i> 
-          <span class="badge badge-pill badge-light badge-notify cartNotistyle cartNoti"></span>
-          <span class="cartTotal"></span> Ks
+          <span class="badge badge-pill badge-light badge-notify cartNotistyle cartNoti"> 1 </span>
+          <span> 4,800 Ks </span>
         </a>
 
-        <a href="{{route('shoppingcartpage')}}" class="text-decoration-none d-xl-none d-lg-none d-md-none d-sm-inline-block d-inline-block shoppingcartLink"> 
+        <a href="" class="text-decoration-none d-xl-none d-lg-none d-md-none d-sm-inline-block d-inline-block shoppingcartLink"> 
           <i class="icofont-shopping-cart"></i>
-          <span class="badge badge-pill badge-light badge-notify cartNotistyle cartNoti"></span>
+          <span class="badge badge-pill badge-light badge-notify cartNotistyle cartNoti"> 1 </span>
         </a>
 
         <!-- App Download -->
 
-        <a href="#"><img src="{{ asset('frontend/image/download.png')}}" class="img-fluid d-xl-inline d-lg-inline d-md-none d-sm-none d-none" style="width: 150px"></a>
+        <img src="image/download.png" class="img-fluid d-xl-inline d-lg-inline d-md-none d-sm-none d-none" style="width: 150px">
       </div>
     </div>
   </div>
   <div id="myPage"></div>
   
-  <!-- Sub Nav (WEB) -->
+  <!-- Sub Nav (MOBILE) -->
   <div class="container subNav d-xl-block d-lg-block d-none my-3">
     <div class="row align-items-center">
       <div class="col-3 align-items-center">
@@ -145,31 +123,267 @@
 
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                @foreach($categories as $category)
                   <li class="dropdown-submenu">
                     <a class="dropdown-item" href="javascript:void(0)">
-                      {{$category->name}}
+                      Electronic Devices
                       <i class="icofont-rounded-right float-right"></i>
                     </a>
                     <ul class="dropdown-menu">
                       <h6 class="dropdown-header">
-                        {{$category->name}}
+                        Electronic Devices
                       </h6>
-                      @foreach($category->subcategories as $subcategory)
-                        <li><a class="dropdown-item" href="{{route('filteritemspage',$subcategory->id)}}">{{$subcategory->name}}</a></li>
-                      @endforeach
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
                     </ul>
                   </li>
-                  @if (!$loop->last)
-                    <div class="dropdown-divider"></div>
-                  @endif
-                @endforeach
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Woman Fashion
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Woman Fashion
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Man Fashion
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Man Fashion
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Beauty
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Beauty
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Toys
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Toys
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Pets
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Pets
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Sports
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Sports
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Health
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Health
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Smart Home
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Smart Home
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Furniture
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Furniture
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Travel
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Travel
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Kitchen
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Kitchen
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Book
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Book
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Stationery
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Stationery
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Home Decor
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Home Decor
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+                  <div class="dropdown-divider"></div>
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      Baby Care
+                      <i class="icofont-rounded-right float-right"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <h6 class="dropdown-header">
+                        Baby Care
+                      </h6>
+                        <li><a class="dropdown-item" href="#">Submenu</a></li>
+                        <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                      
+                    </ul>
+                  </li>
+
               </ul>
             </div>
       </div>
 
       <div class="col-3">
-        <a href="{{route('promotionspage')}}" class="text-decoration-none text-dark font-weight-bold"> Promotions </a>
+        <a href="" class="text-decoration-none text-dark font-weight-bold"> Promotion </a>
       </div>
       <div class="col-3">
         <div class="hov-dropdown d-inline-block">
@@ -226,11 +440,11 @@
     </div>
   </div>
 
-  <!-- Sub Nav (MOBILE) -->
+  <!-- Sub Nav (WEB) -->
   <div id="mySidebar" class="sidebar">
     <div class="row">
       <div class="col-10">
-          <img src="{{ asset('frontend/logo/logo_med_trans.png')}}" class="img-fluid" style="width: 100px">
+          <img src="../logo/logo_med_trans.png" class="img-fluid" style="width: 100px">
       </div>
       <div class="col-2">
         <a href="javascript:void(0)" class="closebtn text-decoration-none">
@@ -296,16 +510,1052 @@
       <a href="#"> Cart [ <span class="cartNoti"> 1 </span> ]  </a>
       <hr>
 
-      <img src="{{ asset('frontend/image/download.png')}}" class="img-fluid ml-2 text-center" style="width: 150px">
+      <img src="image/download.png" class="img-fluid ml-2 text-center" style="width: 150px">
       <hr>
 
-      <p class="text-white ml-3"> Copyright &copy; <img src="{{ asset('frontend/logo/logo_wh_transparent.png')}}" style="width: 20px; height: 20px"> 2019  </p>
+      <p class="text-white ml-3"> Copyright &copy; <img src="../logo/logo_wh_transparent.png" style="width: 20px; height: 20px"> 2019  </p>
 
     </div>
+      
   </div>
 
   
-  @yield('content')
+  <!-- Carousel -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="image/banner/ac.jpg" class="d-block w-100 bannerImg" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="image/banner/giordano.jpg" class="d-block w-100 bannerImg" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="image/banner/garnier.jpg" class="d-block w-100 bannerImg" alt="...">
+        </div>
+      </div>
+  </div>
+
+
+  <!-- Content -->
+  <div class="container mt-5 px-5">
+    <!-- Category -->
+    <div class="row">
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
+        <div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
+            <img src="image/category/category_one.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text font-weight-bold text-truncate"> Smart Home </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
+        <div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
+            <img src="image/category/category_two.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text font-weight-bold text-truncate"> Grocery </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
+        <div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
+            <img src="image/category/category_three.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text font-weight-bold text-truncate"> Cosmetic </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
+        <div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
+            <img src="image/category/category_four.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text font-weight-bold text-truncate"> Stationery </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
+        <div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
+            <img src="image/category/category_five.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text font-weight-bold text-truncate"> Electronic Devices </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
+        <div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
+            <img src="image/category/category_six.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text font-weight-bold text-truncate"> Furniture </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
+        <div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
+            <img src="image/category/category_seven.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text font-weight-bold text-truncate"> Kitchen Apperience </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
+        <div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
+            <img src="image/category/category_eight.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text font-weight-bold text-truncate"> Health Care </p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
+    
+    <!-- Discount Item -->
+    <div class="row mt-5">
+      <h1> Discount Item </h1>
+    </div>
+
+      <!-- Disocunt Item -->
+    <div class="row">
+      <div class="col-12">
+        <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+                <div class="MultiCarousel-inner">
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/saisai_one.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks</span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/saisai_two.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/saisai_three.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/saisai_four.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/giordano_one.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/giordano_two.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/giordano_three.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/giordano_four.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/apple_four.jpeg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/apple_one.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks</span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/apple_three.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/apple_two.png" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <button class="btn btnMain leftLst"><</button>
+                <button class="btn btnMain rightLst">></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flash Sale Item -->
+    <div class="row mt-5">
+      <h1> Flash Sale </h1>
+    </div>
+
+      <!-- Flash Sale Item -->
+    <div class="row">
+      <div class="col-12">
+        <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+                <div class="MultiCarousel-inner">
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/saisai_one.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks</span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/saisai_two.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/saisai_three.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/saisai_four.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/giordano_one.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/giordano_two.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/giordano_three.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/giordano_four.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/apple_four.jpeg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/apple_one.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks</span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/apple_three.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/apple_two.png" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <button class="btn btnMain leftLst"><</button>
+                <button class="btn btnMain rightLst">></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Random Catgory ~ Item -->
+    <div class="row mt-5">
+      <h1> Fresh Picks </h1>
+    </div>
+
+      <!-- Random Item -->
+    <div class="row">
+      <div class="col-12">
+        <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+                <div class="MultiCarousel-inner">
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/saisai_one.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks</span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/saisai_two.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/saisai_three.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/saisai_four.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/giordano_one.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/giordano_two.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/giordano_three.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/giordano_four.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/apple_four.jpeg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/apple_one.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks</span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/apple_three.jpg" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                          <img src="image/item/apple_two.png" class="img-fluid">
+                            <p class="text-truncate">Multi Item Carousel</p>
+                            <p class="item-price">
+                              <strike>250,000 Ks </strike> 
+                              <span class="d-block">230,000 Ks </span>
+                            </p>
+
+                            <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <button class="btn btnMain leftLst"><</button>
+                <button class="btn btnMain rightLst">></button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
+
+      <!-- Brand Store -->
+      <div class="row mt-5">
+      <h1> Top Brand Stores </h1>
+      </div>
+
+      <!-- Brand Store Item -->
+      <section class="customer-logos slider mt-5">
+          <div class="slide">
+            <a href="">
+              <img src="image/brand/loacker_logo.jpg">
+            </a>
+          </div>
+          
+          <div class="slide">
+            <a href="">
+              <img src="image/brand/lockandlock_logo.png">
+            </a>
+          </div>
+          
+          <div class="slide">
+            <a href="">
+              <img src="image/brand/apple_logo.png">
+            </a>
+          </div>
+          
+          <div class="slide">
+            <a href="">
+              <img src="image/brand/giordano_logo.png">
+            </a>
+          </div>
+          
+          <div class="slide">
+            <a href="">
+              <img src="image/brand/saisai_logo.png">
+            </a>
+          </div>
+          
+          <div class="slide">
+            <a href="">
+              <img src="image/brand/brands_logo.png">
+            </a>  
+          </div>
+          
+          <div class="slide">
+            <a href="">
+              <img src="image/brand/acer_logo.png">
+            </a>
+          </div>
+          
+          <div class="slide">
+            <a href="">
+              <img src="image/brand/bella_logo.png">
+            </a>
+          </div>
+          
+          <div class="slide">
+            <a href="">
+              <img src="image/brand/ariel_logo.png">
+            </a>
+          </div>
+      </section>
+
+      <div class="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
+
+  </div>
 
 
   <!-- Footer -->
