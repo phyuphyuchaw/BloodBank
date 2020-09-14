@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
+/*<<<<<<< HEAD
 /*Route::get('/', function () {
 <<<<<<< HEAD
    // return view('welcome');
@@ -36,11 +36,20 @@ Route::get('/testing',function ($value=''){
 >>>>>>> f308780851173f68fa6a53743d6e5ce1bbcb84f4
 });*/
 
+// backend
 
   Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
-=======
-});
 
-Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
->>>>>>> 690b4986fbd3612b8efe7757eaaf8727f761339a
+// Frontend
 
+Route::get('/','PageController@home')->name('homepage');
+
+Route::get('about','PageController@about')->name('aboutpage');
+
+Route::get('contact','PageController@contact')->name('contactpage');
+
+Route::get('blog','PageController@blog')->name('blogpage');
+
+Route::get('loginform','PageController@login')->name('loginpage');
+
+Route::get('registerform','PageController@register')->name('registerpage');
