@@ -8,7 +8,7 @@ class Donor extends Model
 {
 
     protected $fillable = [
-        'user_id','age','gender','bloodgroup', 'phone','email','address','profile','posting_date',
+        'name','age','gender','bloodgroup', 'phone','email','address','photo','postingdate',
     ];
 public function bloodgroups($value='')
 {

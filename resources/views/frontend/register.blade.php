@@ -17,7 +17,7 @@
               <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-group">
-                              <label class="small mb-1" for="inputName"> Username</label>
+                              <label class="small mb-1" for="inputName"> Name</label>
                               <input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name Address" name="name" />
                             </div>
                         </div>

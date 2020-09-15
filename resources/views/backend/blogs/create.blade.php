@@ -6,13 +6,11 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <div class="row">
             <div class="col">
-            <h1 class="h3 mb-0 text-gray-800">Blog Create</h1>
-            
-
+            <h1 class="h3 mb-0 text-gray-800">Blog Create</h1>  
         </div>
     </div>
 </div>
-<form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     
 
