@@ -121,12 +121,21 @@
           <span>Donors</span></a>
       </li>
 
+              <li class="nav-item">
+        <a class="nav-link" href="{{route('bloodgroups.index')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Blood Group</span></a>
+      </li>
+
+
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="{{route('blogs.index')}}">
           <i class="fas fa-fw fa-table"></i>
           <span>Blog</span></a>
       </li>
+
+
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

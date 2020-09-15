@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::resource('donors','DonorController');
 
 Route::resource('blogs','BlogController');
+Route::resource('bloodgroups','BloodgroupController');
+
 
 // backend
 

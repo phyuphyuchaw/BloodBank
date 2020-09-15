@@ -25,7 +25,9 @@ class DonorController extends Controller
      */
     public function create()
     {
-        //
+
+         $donors = Donor::all();
+         return view('backend.donors.create');
     }
 
     /**
@@ -36,7 +38,38 @@ class DonorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+            "name"=>'required',
+            "age"=>'required',
+            "gender" =>'required',
+            "bloodgroup" =>'required', 
+            "phone" =>'required',
+            "email" =>'required',
+            "address" =>'required', 
+            "photo" =>'required',
+            "postingdate" =>'required'
+
+        ]);
+        //If include file,upload file
+        $imageName = time().'.'.$request->photo->extension();
+        $request->photo->move(public_path('backend/donorimg'),$imageName);
+        $path='backend/donorimg/'.$imageName;
+
+        //Data insert
+        $donor = new Donor;
+        $donor->name =$request->name;
+        $donor->age =$request->age;
+        $donor->gender =$request->gender;
+        $donor->bloodgroup =$request->bloodgroup;
+        $donor->phone =$request->phone;
+        $donor->email =$request->email;
+        $donor->address =$request->address;
+        $donor->photo =$path;
+        $donor->postingdate =$request->postingdate;
+        $donor->save();
+
+        //redirect
+        return redirect()->route('donors.index');
     }
 
     /**
@@ -47,7 +80,8 @@ class DonorController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('backend.donors.edit',compact('donor'));
+
     }
 
     /**
@@ -56,9 +90,9 @@ class DonorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Donor $donor)
     {
-        //
+      return view('backend.donors.edit',compact('donor'));
     }
 
     /**
@@ -68,9 +102,48 @@ class DonorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Donor $donor)
     {
-        //
+        $request->validate([
+            "name"=>'required',
+            "age"=>'required',
+            "gender" =>'required',
+            "bloodgroup" =>'required', 
+            "phone" =>'required',
+            "email" =>'required',
+            "address" =>'required', 
+            "photo" =>'sometimes',
+            "oldphoto" => 'required',
+            "postingdate" =>'required'
+    ]);
+
+        if($request->hasFile('photo')){
+
+        $imageName = time().'.'.$request->photo->extension();
+
+        $request->photo->move(public_path('backend/donorimg'),$imageName);
+
+        $path='backend/donorimg/'.$imageName;
+
+
+        }else{
+            $path = $request->oldphoto;
+
+        }
+        //data update
+        $donor->name =$request->name;
+        $donor->age =$request->age;
+        $donor->gender =$request->gender;
+        $donor->bloodgroup =$request->bloodgroup;
+        $donor->phone =$request->phone;
+        $donor->email =$request->email;
+        $donor->address =$request->address;
+        $donor->photo =$path;
+        $donor->postingdate =$request->postingdate;
+        $donor->save();
+
+        //redirect
+        return redirect()->route('donors.index');
     }
 
     /**

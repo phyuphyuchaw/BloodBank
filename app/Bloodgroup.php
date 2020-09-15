@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Bloodgroup extends Model
 {
      protected $fillable = [
-        'id','name','bloodgroup','unit','posting_date',
+        'id','blood_type','unit','postingdate',
     ];
     public function donors($value='')
     {

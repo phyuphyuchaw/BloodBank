@@ -4,9 +4,9 @@
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
          
             <div class="col">
-            <h1 class="h3 mb-0 text-gray-800">Blog</h1>
+            <h1 class="h3 mb-0 text-gray-800">BloodGroup</h1>
             <div class="float-right align-items-right justify-content-between mb-4">
-            <a href="{{route('blogs.create')}}" class="btn btn-success">Add New</a>
+            <a href="{{route('bloodgroups.create')}}" class="btn btn-success">Add New</a>
 
             
         </div>
@@ -19,29 +19,27 @@
     			<thead class="thead-dark">
     				<tr>
     					<th>No</th>
-    					<th>Photo</th>
-    					<th>Head Line</th>
-                        <th>Post</th>
+    					<th>Bloodgroup</th>
+    					<th>Unit</th>
+                        <th>Posting_date</th>
                         <th>Action</th>
 
     				</tr>
     			</thead>
     			<tbody>
     				@php $i=1; @endphp
-    				@foreach($blogs as $blog)
+    				@foreach($bloodgroups as $bloodgroup)
     				<tr>
     					<td>{{$i++}}</td>
-    					<td><img src="{{asset($blog->photo)}}" width=100 height=100></td>
-                        <td>{{$blog->headline}}</td>
-                        <td>{{$blog->post}}</td>
+                        <td>{{$bloodgroup->bloodgroup}}</td>
+                        <td>{{$bloodgroup->unit}}</td>
+                        <td>{{$bloodgroup->postingdate}}</td>
+
                         <td>
-<<<<<<< HEAD
                             
-=======
->>>>>>> 3df5c78d11fd672f9ac92cd1e9b3334c3609d857
-    						<a href="{{route('blogs.edit',$blog->id)}}" class="btn btn-warning">Edit</a>
+    						{{-- <a href="{{route('blogs.edit',$blog->id)}}" class="btn btn-warning">Edit</a> --}}
                             
-                            <form method="post" action="{{route('blogs.destroy',$blog->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
+                            <form method="post" action="{{route('bloodgroups.destroy',$bloodgroup->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <input type="submit" class="btn btn-danger" value="Delete">
