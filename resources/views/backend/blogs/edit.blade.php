@@ -37,10 +37,10 @@
     </div>
 
     <div class="form-group row">
-      <label for="" class="col-sm-2 col-form-label">Post</label>
+      <label for="" class="col-sm-2 col-form-label">Posts</label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" id="" name="post" value="{{ $blog->post }}">
-      </div>
+      <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message">{{$blog->post}}</textarea>
+    </div>
     </div>
 
       

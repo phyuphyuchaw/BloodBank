@@ -12,6 +12,6 @@ class Donor extends Model
     ];
 public function bloodgroups($value='')
 {
-	return $this->hasMany('App\Bloodgroup');
+	return $this->belongsTo('App\Bloodgroup');
 }
 }

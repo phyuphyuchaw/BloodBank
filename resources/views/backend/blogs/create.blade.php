@@ -19,7 +19,7 @@
         <div class="col-sm-6">
           <input type="file" class="form-control-file" id="" name="photo">
         @error('photo')
-      <label class="text-danger">Please input choose Photo !</label>
+      <label class="text-danger">Please choose Photo !</label>
       @enderror
         </div>
       </div>
@@ -29,7 +29,7 @@
       <div class="col-sm-6">
         <input type="text" class="form-control" id="" name="headline">
         @error('headline')
-      <label class="text-danger">Please input  !</label>
+      <label class="text-danger">Please input Head Line !</label>
       @enderror
       </div>
     </div>
@@ -38,9 +38,9 @@
     <div class="form-group row">
       <label for="" class="col-sm-2 col-form-label">Post</label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" id="" name="post">
+        <textarea name="post" cols="100%" rows="7"></textarea>
         @error('post')
-      <label class="text-danger">Please input !</label>
+      <label class="text-danger">Please input Post!</label>
       @enderror
       </div>
     </div>

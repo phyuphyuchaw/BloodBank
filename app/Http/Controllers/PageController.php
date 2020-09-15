@@ -30,7 +30,7 @@ class PageController extends Controller
 
   public function login($value='')
   {
-    return view('frontend.shoppingcart');
+    return view('frontend.login');
   }
 
   public function register($value='')
