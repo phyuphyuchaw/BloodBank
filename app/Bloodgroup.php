@@ -9,4 +9,8 @@ class Bloodgroup extends Model
      protected $fillable = [
         'id','name','bloodgroup','unit','posting_date',
     ];
+    public function donors($value='')
+    {
+    	return $this->belongsTo('App\Donor');
+    }
 }
