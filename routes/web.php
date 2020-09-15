@@ -23,8 +23,7 @@ Route::resource('blogs','BlogController');
 // backend
 
 
-
-  
+  Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 // Frontend
 
@@ -36,12 +35,39 @@ Route::get('contact','PageController@contact')->name('contactpage');
 
 Route::get('blog','PageController@blog')->name('blogpage');
 
+<<<<<<< HEAD
 Route::get('detail','PageController@detail')->name('detailpage');
 
 Route::get('search','PageController@search')->name('searchpage');
 
 Route::get('loginform','PageController@login')->name('loginpage');
+=======
+>>>>>>> dc5db363a19cbdc19518d99ec93c0405ee374a5b
+
+
+
+
+//   Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+// });
+
+
+
+// Route::get('/', function () {
+  
+// 	// return 'bloodbank';
+// 	return 'welcome';
+// });
+
+Route::middleware('role:Admin')->group(function()
+{
+  Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+});
+
+Auth::routes();
+
+Route::get('loginform','PageController@login')->name('loginpage');
+
+Route::get('/home', 'HomeController@index')->name('home');
+  
 
 Route::get('registerform','PageController@register')->name('registerpage');
-
-
