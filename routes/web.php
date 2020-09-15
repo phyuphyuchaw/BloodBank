@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+// Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 Route::resource('donors','DonorController');
 
@@ -23,7 +23,7 @@ Route::resource('blogs','BlogController');
 // backend
 
 
-  Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+  // Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 // Frontend
 
@@ -70,3 +70,7 @@ Route::get('/home', 'HomeController@index')->name('home');
   
 
 Route::get('registerform','PageController@register')->name('registerpage');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
