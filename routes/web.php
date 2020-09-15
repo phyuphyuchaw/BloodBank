@@ -51,7 +51,8 @@ Route::resource('blogs','BlogController');
 // backend
 
 
-  Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+
+  
 
 // Frontend
 
@@ -65,6 +66,7 @@ Route::get('blog','PageController@blog')->name('blogpage');
 
 
 
+<<<<<<< HEAD
 //   Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 // });
 
@@ -86,4 +88,6 @@ Route::get('loginform','PageController@login')->name('loginpage');
 
 
   
+=======
+>>>>>>> 7642d09e22780fa98aaa154226ea5c5c4591f023
 
