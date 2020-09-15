@@ -53,6 +53,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phone' => ['required', 'string', 'max:12'],
+            'address' => ['required'],
         ]);
     }
 
@@ -64,10 +66,34 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'phone' => $data['phone'],
+            'address' => $data['address'],
         ]);
+
+        $user->assignRole('Donor');
+
+        return $user;
+    }
+
+    protected function redirectTo()
+    {
+        $roles = auth()->user()->getRoleNames();
+
+        // Check user role
+        switch ($roles[0]) {
+            case 'Admin':
+                    return 'dashboard';
+                break;
+            case 'Donor':
+                    return 'frontendtemplate';
+                break; 
+            default:
+                    return '/';  
+                break;
+        }
     }
 }
