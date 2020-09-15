@@ -35,7 +35,6 @@
                         <td>{{$blog->headline}}</td>
                         <td>{{$blog->post}}</td>
                         <td>
-    						 <a href="#" class="btn btn-primary">Detail</a>
     						<a href="{{route('blogs.edit',$blog->id)}}" class="btn btn-warning">Edit</a>
                             
                             <form method="post" action="{{route('blogs.destroy',$blog->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
