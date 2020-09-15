@@ -40,7 +40,6 @@ Route::get('/testing',function ($value=''){
 >>>>>>> f308780851173f68fa6a53743d6e5ce1bbcb84f4
 });*/
 
-Route::get('register','PageController@register')->name('registerpage');
 
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
@@ -51,8 +50,7 @@ Route::resource('blogs','BlogController');
 // backend
 
 
-
-  
+  Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 // Frontend
 
@@ -66,26 +64,29 @@ Route::get('blog','PageController@blog')->name('blogpage');
 
 
 
-Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 
-Route::middleware('role:Admin')->group(function()
-{
+//   Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+// });
 
-Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
-});
+
 // Route::get('/', function () {
   
 // 	// return 'bloodbank';
 // 	return 'welcome';
 // });
 
+Route::middleware('role:Admin')->group(function()
+{
+  Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+});
+
 Auth::routes();
 
 Route::get('loginform','PageController@login')->name('loginpage');
 
-
+Route::get('/home', 'HomeController@index')->name('home');
   
 
-
+Route::get('registerform','PageController@register')->name('registerpage');
