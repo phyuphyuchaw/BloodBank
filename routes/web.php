@@ -40,6 +40,7 @@ Route::get('/testing',function ($value=''){
 >>>>>>> f308780851173f68fa6a53743d6e5ce1bbcb84f4
 });*/
 
+Route::get('register','PageController@register')->name('registerpage');
 
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
@@ -62,22 +63,27 @@ Route::get('contact','PageController@contact')->name('contactpage');
 
 Route::get('blog','PageController@blog')->name('blogpage');
 
-Route::get('loginform','PageController@login')->name('loginpage');
 
-Route::get('registerform','PageController@register')->name('registerpage');
 
 //   Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 // });
 
+Route::middleware('role:Admin')->group(function()
+{
+
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
-
-Route::get('/', function () {
+});
+// Route::get('/', function () {
   
-	return 'bloodbank';
-});
+// 	// return 'bloodbank';
+// 	return 'welcome';
+// });
+
+Auth::routes();
+
+Route::get('loginform','PageController@login')->name('loginpage');
 
 
-  return 'welcome';
-});
+  
 
