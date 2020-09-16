@@ -21,10 +21,10 @@
               <div class="form-group">
                         <div class="col-md-6">
                             <div class="form-group">
-<<<<<<< HEAD
+
                               <label class="small mb-1" for="inputName"> Name</label>
                               <input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name Address" name="name" />
-=======
+
                               <label class="small mb-1" for="inputName"> Username</label>
                               <input class="form-control py-4 @error('name') is-invalid @enderror" id="inputName" type="text" placeholder="Enter Name" name="name" value="{{ old('name')}}" required autocomplete="name" autofocus />
                               @error('name')
@@ -32,7 +32,7 @@
                               	<strong>{{$message}}</strong>
                               </span>
                               @enderror
->>>>>>> 3df5c78d11fd672f9ac92cd1e9b3334c3609d857
+
                             </div>
                         </div>
                         <div class="col-md-6">
