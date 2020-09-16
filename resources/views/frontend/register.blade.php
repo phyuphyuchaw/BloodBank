@@ -3,13 +3,11 @@
   <!-- Subcategory Title -->
 <<<<<<< HEAD
   {{-- <div class="jumbotron jumbotron-fluid subtitle"> --}}
-      <div class="container-fluid">
-        <h1 class="text-center text-dark"> JOIN AS BLOOD DONOR </h1>
-=======
+      {{-- <div class="container-fluid">
+        <h1 class="text-center text-dark"> JOIN AS BLOOD DONOR </h1> --}}
   <div class="jumbotron jumbotron-fluid subtitle">
       <div class="container">
         <h1 class="text-center text-white"> JOIN AS BLOOD DONOR </h1>
->>>>>>> dc5db363a19cbdc19518d99ec93c0405ee374a5b
       </div>
  {{--  </div> --}}
   
@@ -24,11 +22,9 @@
         	@csrf
               <div class="form-group">
                         <div class="col-md-6">
-                            <div class="form-group">
-<<<<<<< HEAD
+                            {{-- <div class="form-group">
                               <label class="small mb-1" for="inputName"> Name</label>
-                              <input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name Address" name="name" />
-=======
+                              <input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name Address" name="name" /> --}}
                               <label class="small mb-1" for="inputName"> Username</label>
                               <input class="form-control py-4 @error('name') is-invalid @enderror" id="inputName" type="text" placeholder="Enter Name" name="name" value="{{ old('name')}}" required autocomplete="name" autofocus />
                               @error('name')
@@ -36,7 +32,6 @@
                               	<strong>{{$message}}</strong>
                               </span>
                               @enderror
->>>>>>> 3df5c78d11fd672f9ac92cd1e9b3334c3609d857
                             </div>
                         </div>
                         <div class="col-md-6">

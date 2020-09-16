@@ -35,10 +35,6 @@
                         <td>{{$blog->headline}}</td>
                         <td>{{$blog->post}}</td>
                         <td>
-<<<<<<< HEAD
-                            
-=======
->>>>>>> 3df5c78d11fd672f9ac92cd1e9b3334c3609d857
     						<a href="{{route('blogs.edit',$blog->id)}}" class="btn btn-warning">Edit</a>
                             
                             <form method="post" action="{{route('blogs.destroy',$blog->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
