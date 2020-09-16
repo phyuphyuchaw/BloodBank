@@ -1,14 +1,21 @@
 @extends('frontendtemplate')
 @section('content')
   <!-- Subcategory Title -->
-<<<<<<< HEAD
+
   {{-- <div class="jumbotron jumbotron-fluid subtitle"> --}}
+<<<<<<< HEAD
       {{-- <div class="container-fluid">
         <h1 class="text-center text-dark"> JOIN AS BLOOD DONOR </h1> --}}
   <div class="jumbotron jumbotron-fluid subtitle">
       <div class="container">
         <h1 class="text-center text-white"> JOIN AS BLOOD DONOR </h1>
       </div>
+=======
+      <div class="container-fluid">
+        <h1 class="text-center text-dark"> JOIN AS BLOOD DONOR </h1>
+       </div> 
+  
+>>>>>>> 18d676b4a10c6c6278c66866e71f388de138acdb
  {{--  </div> --}}
   
   <!-- Content -->

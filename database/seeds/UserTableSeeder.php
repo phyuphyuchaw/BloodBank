@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use User;
 class UserTableSeeder extends Seeder
 {
     /**
@@ -12,6 +12,9 @@ class UserTableSeeder extends Seeder
     public function run()
     {
 <<<<<<< HEAD
+        factory(App\User::class, 2)->create()->each(function ($user) {
+=======
+<<<<<<< HEAD
         $s1=new Donor;
       
      
@@ -21,6 +24,7 @@ class UserTableSeeder extends Seeder
         $s1->save();
 =======
        factory(App\User::class, 2)->create()->each(function ($user) {
+>>>>>>> c5f506736adb73120a4dd76a4ee3b83dfeed643d
           // Seed the relation with one customer
           $donor = factory(App\Donor::class)->make();
           $user->donor()->save($donor);
