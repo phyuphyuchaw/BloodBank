@@ -3,10 +3,19 @@
   <!-- Subcategory Title -->
 
   {{-- <div class="jumbotron jumbotron-fluid subtitle"> --}}
+<<<<<<< HEAD
+      {{-- <div class="container-fluid">
+        <h1 class="text-center text-dark"> JOIN AS BLOOD DONOR </h1> --}}
+  <div class="jumbotron jumbotron-fluid subtitle">
+      <div class="container">
+        <h1 class="text-center text-white"> JOIN AS BLOOD DONOR </h1>
+      </div>
+=======
       <div class="container-fluid">
         <h1 class="text-center text-dark"> JOIN AS BLOOD DONOR </h1>
        </div> 
   
+>>>>>>> 18d676b4a10c6c6278c66866e71f388de138acdb
  {{--  </div> --}}
   
   <!-- Content -->
@@ -20,11 +29,17 @@
         	@csrf
               <div class="form-group">
                         <div class="col-md-6">
+<<<<<<< HEAD
                             <div class="form-group">
 
                               <label class="small mb-1" for="inputName"> Name</label>
                               <input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name Address" name="name" />
 
+=======
+                            {{-- <div class="form-group">
+                              <label class="small mb-1" for="inputName"> Name</label>
+                              <input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name Address" name="name" /> --}}
+>>>>>>> fb0761556e462dc2a2885ee708f64fefc26136dc
                               <label class="small mb-1" for="inputName"> Username</label>
                               <input class="form-control py-4 @error('name') is-invalid @enderror" id="inputName" type="text" placeholder="Enter Name" name="name" value="{{ old('name')}}" required autocomplete="name" autofocus />
                               @error('name')
@@ -32,7 +47,10 @@
                               	<strong>{{$message}}</strong>
                               </span>
                               @enderror
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb0761556e462dc2a2885ee708f64fefc26136dc
                             </div>
                         </div>
                         <div class="col-md-6">

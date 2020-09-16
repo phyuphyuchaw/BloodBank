@@ -6,8 +6,8 @@
             <div class="col">
             <h1 class="h3 mb-0 text-gray-800">BloodGroup</h1>
             <div class="float-right align-items-right justify-content-between mb-4">
-            <a href="{{route('bloodgroups.create')}}" class="btn btn-success">Add New</a>
-
+{{--             <a href="{{route('bloodgroups.create')}}" class="btn btn-success">Add New</a>
+ --}}
             
         </div>
     </div>
