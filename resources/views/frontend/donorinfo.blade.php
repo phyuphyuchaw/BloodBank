@@ -22,7 +22,21 @@
         	@csrf
               <div class="form-group">
                         <div class="col-md-6">
+<<<<<<< HEAD:resources/views/frontend/donorinfo.blade.php
                             <div class="form-group">
+=======
+<<<<<<< HEAD
+                            <div class="form-group">
+
+                              <label class="small mb-1" for="inputName"> Name</label>
+                              <input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name Address" name="name" />
+
+=======
+                            {{-- <div class="form-group">
+                              <label class="small mb-1" for="inputName"> Name</label>
+                              <input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name Address" name="name" /> --}}
+>>>>>>> fb0761556e462dc2a2885ee708f64fefc26136dc
+>>>>>>> 7d76e6b6feac25a118044d312ecd6197da33a532:resources/views/frontend/register.blade.php
                               <label class="small mb-1" for="inputName"> Username</label>
                               <input class="form-control py-4 @error('name') is-invalid @enderror" id="inputName" type="text" placeholder="Enter Name" name="name" value="{{ old('name')}}" required autocomplete="name" autofocus />
                               @error('name')
@@ -30,6 +44,10 @@
                               	<strong>{{$message}}</strong>
                               </span>
                               @enderror
+<<<<<<< HEAD
+
+=======
+>>>>>>> fb0761556e462dc2a2885ee708f64fefc26136dc
                             </div>
                         </div>
                         <div class="col-md-6">
