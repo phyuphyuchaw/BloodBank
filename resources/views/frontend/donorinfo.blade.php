@@ -3,19 +3,12 @@
   <!-- Subcategory Title -->
 
   {{-- <div class="jumbotron jumbotron-fluid subtitle"> --}}
-<<<<<<< HEAD
       {{-- <div class="container-fluid">
         <h1 class="text-center text-dark"> JOIN AS BLOOD DONOR </h1> --}}
   <div class="jumbotron jumbotron-fluid subtitle">
       <div class="container">
         <h1 class="text-center text-white"> JOIN AS BLOOD DONOR </h1>
       </div>
-=======
-      <div class="container-fluid">
-        <h1 class="text-center text-dark"> JOIN AS BLOOD DONOR </h1>
-       </div> 
-  
->>>>>>> 18d676b4a10c6c6278c66866e71f388de138acdb
  {{--  </div> --}}
   
   <!-- Content -->
@@ -25,13 +18,11 @@
 
     <div class="row justify-content-center">
       <div class="col-8">
-        <form action="{{route('registerpage')}}" method="POST">
+        <form action="{{route('homepage')}}" method="POST">
         	@csrf
               <div class="form-group">
                         <div class="col-md-6">
-                            {{-- <div class="form-group">
-                              <label class="small mb-1" for="inputName"> Name</label>
-                              <input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name Address" name="name" /> --}}
+                            <div class="form-group">
                               <label class="small mb-1" for="inputName"> Username</label>
                               <input class="form-control py-4 @error('name') is-invalid @enderror" id="inputName" type="text" placeholder="Enter Name" name="name" value="{{ old('name')}}" required autocomplete="name" autofocus />
                               @error('name')
@@ -87,17 +78,7 @@
                               @enderror
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                        <label class="small mb-1" for="inputEmailAddress">Email</label>
-                              <input class="form-control py-4 @error('email') is-invalid @enderror" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" name="email" value="{{old('email')}}" required autocomplete="email" />
-                              @error('email')
-                              <span class="invalid-feedback" role="alert">
-                              	<strong>{{$message}}</strong>
-                              </span>
-                              @enderror
-                            </div>
-                        </div>
+
                         <div class="col-md-6">
                             <div class="form-group">
                               <label class="small mb-1" for="address"> Address </label>
@@ -109,8 +90,20 @@
                               @enderror
                             </div>
                         </div>
+
+                            <div class="col-md-6">
+                            <div class="form-group">
+                        <label class="small mb-1" for="inputEmailAddress">Photo</label>
+                              <input  type="file" class="form-control-file py-4 @error('photo') is-invalid @enderror" id="inputEmailAddress"  name="photo" value="{{old('photo')}}" >
+                              @error('photo')
+                              <span class="invalid-feedback" role="alert">
+                                <strong>{{$message}}</strong>
+                              </span>
+                              @enderror
+                            </div>
+                        </div>
                         
-					  <div class="form-group">
+{{-- 					  <div class="form-group">
                         <div class="col-md-6">
                             <div class="form-group">
                               <label class="small mb-1" for="inputPassword">Password</label>
@@ -130,7 +123,7 @@
                         </div>
                     </div>
 
-                    
+                     --}}
               
               <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                 

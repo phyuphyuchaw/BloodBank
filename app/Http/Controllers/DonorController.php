@@ -44,10 +44,8 @@ class DonorController extends Controller
             "gender" =>'required',
             "bloodgroup" =>'required', 
             "phone" =>'required',
-            "email" =>'required',
             "address" =>'required', 
-            "photo" =>'required',
-            "postingdate" =>'required'
+            "photo" =>'required'
 
         ]);
         //If include file,upload file
@@ -62,10 +60,8 @@ class DonorController extends Controller
         $donor->gender =$request->gender;
         $donor->bloodgroup =$request->bloodgroup;
         $donor->phone =$request->phone;
-        $donor->email =$request->email;
         $donor->address =$request->address;
         $donor->photo =$path;
-        $donor->postingdate =$request->postingdate;
         $donor->save();
 
         //redirect
@@ -113,8 +109,7 @@ class DonorController extends Controller
             "email" =>'required',
             "address" =>'required', 
             "photo" =>'sometimes',
-            "oldphoto" => 'required',
-            "postingdate" =>'required'
+            "oldphoto" => 'required'
     ]);
 
         if($request->hasFile('photo')){
@@ -139,7 +134,6 @@ class DonorController extends Controller
         $donor->email =$request->email;
         $donor->address =$request->address;
         $donor->photo =$path;
-        $donor->postingdate =$request->postingdate;
         $donor->save();
 
         //redirect

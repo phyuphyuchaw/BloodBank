@@ -16,15 +16,13 @@
     			<thead class="thead-dark">
     				<tr>
     					<th>No</th>
-    					<th>Name</th>
+    					<th>User_id</th>
     					<th>Age</th>
     					<th>Gender</th>
                         <th>BloodGroup</th>
                         <th>Phone</th>
-                        <th>Email</th>
     					<th>Address</th>
                         <th>Photo</th>
-                        <th>Posting_date</th>
                         <th>Action</th>
 
     				</tr>
@@ -34,15 +32,13 @@
     				@foreach($donors as $donor)
     				<tr>
     					<td>{{$i++}}</td>
-    					<td>{{$donor->name}}</td>
+    					<td>{{$donor->user_id}}</td>
     					<td>{{$donor->age}}</td>
     					<td>{{$donor->gender}}</td>
                         <td>{{$donor->bloodgroup}}</td>
                         <td>{{$donor->phone}}</td>
-                        <td>{{$donor->email}}</td>
                         <td>{{$donor->address}}</td>
                         <td><img src="{{asset($donor->photo)}}" width=100 height=100></td>
-                        <td>{{$donor->postingdate}}</td>
     					<td>
     						<a href="{{route('donors.edit',$donor->id)}}" class="btn btn-success">Edit</a>
                             <form method="post" action="{{route('donors.destroy',$donor->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">

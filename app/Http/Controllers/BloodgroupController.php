@@ -25,7 +25,7 @@ class BloodgroupController extends Controller
      */
     public function create()
     {
-        //
+      return view('backend.bloodgroups.create');
     }
 
     /**
@@ -36,7 +36,19 @@ class BloodgroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+            "bloodtype" =>'required',
+            "unit" =>'required'
+        ]);
+
+        //Data insert
+        $bloodgroup = new Bloodgroup;
+        $bloodgroup->bloodtype =$request->bloodtype;
+        $bloodgroup->unit =$request->unit;
+        $bloodgroup->save();
+
+        //redirect
+        return redirect()->route('bloodgroups.index');
     }
 
     /**
@@ -47,7 +59,7 @@ class BloodgroupController extends Controller
      */
     public function show($id)
     {
-        //
+       return view('backend.bloodgroups.edit',compact('bloodgroup'));
     }
 
     /**
@@ -56,9 +68,9 @@ class BloodgroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Bloodgroup $bloodgroup)
     {
-        //
+              return view('backend.bloodgroups.edit',compact('bloodgroup'));
     }
 
     /**
@@ -68,10 +80,20 @@ class BloodgroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Bloodgroup $bloodgroup)
     {
-        //
-    }
+        $request->validate([
+            "bloodtype" =>'required',
+            "unit" =>'required'
+
+    ]);
+        //data update
+        $bloodgroup->bloodtype =$request->bloodtype;
+        $bloodgroup->unit =$request->unit;
+        $bloodgroup->save();
+
+        //redirect
+        return redirect()->route('bloodgroups.index');    }
 
     /**
      * Remove the specified resource from storage.
@@ -79,8 +101,9 @@ class BloodgroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Bloodgroup $bloodgroup)
     {
-        //
+        $bloodgroup->delete();
+        return redirect()->route('bloodgroups.index');    
     }
 }

@@ -38,9 +38,9 @@
                 <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
                 <span class="text">thuthu123197@gmail.com</span>
               </div>
-              <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
+              {{-- <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
                 <p class="mb-0 register-link"><a href="{{route('registerpage')}}" class="mr-3">Register</a><a href="{{route('loginpage')}}">Login</a></p>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@
             <li class="nav-item"><a href="{{route('homepage')}}" class="nav-link"><span>Home</span></a></li>
             <li class="nav-item"><a href="{{route('aboutpage')}}" class="nav-link"><span>About</span></a></ li>
             <li class="nav-item"><a href="{{route('detailpage')}}" class="nav-link"><span>Blood Details</span></a></li>
-            <li class="nav-item"><a href="{{route('searchpage')}}" class="nav-link"><span>Search Bloods</span></a></li>
+            <li class="nav-item"><a href="{{route('donorinfopage')}}" class="nav-link"><span>Donor Info</span></a></li>
             <li class="nav-item"><a href="{{route('blogpage')}}" class="nav-link"><span>Blog</span></a></li>
             <li class="nav-item"><a href="{{route('contactpage')}}" class="nav-link"><span>Contact</span></a></li>
           </ul>

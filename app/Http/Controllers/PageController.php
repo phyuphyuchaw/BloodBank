@@ -33,9 +33,9 @@ class PageController extends Controller
     return view('frontend.login');
   }
 
-  public function register($value='')
+  public function donorinfo($value='')
   {
-    return view('frontend.register');
+    return view('frontend.donorinfo');
   }
 
   

@@ -6,8 +6,8 @@
             <div class="col">
             <h1 class="h3 mb-0 text-gray-800">BloodGroup</h1>
             <div class="float-right align-items-right justify-content-between mb-4">
-{{--             <a href="{{route('bloodgroups.create')}}" class="btn btn-success">Add New</a>
- --}}
+            <a href="{{route('bloodgroups.create')}}" class="btn btn-success">Add New</a>
+
             
         </div>
     </div>
@@ -19,9 +19,8 @@
     			<thead class="thead-dark">
     				<tr>
     					<th>No</th>
-    					<th>Bloodgroup</th>
+    					<th>BloodType</th>
     					<th>Unit</th>
-                        <th>Posting_date</th>
                         <th>Action</th>
 
     				</tr>
@@ -31,13 +30,12 @@
     				@foreach($bloodgroups as $bloodgroup)
     				<tr>
     					<td>{{$i++}}</td>
-                        <td>{{$bloodgroup->bloodgroup}}</td>
+                        <td>{{$bloodgroup->bloodtype}}</td>
                         <td>{{$bloodgroup->unit}}</td>
-                        <td>{{$bloodgroup->postingdate}}</td>
 
                         <td>
                             
-    						{{-- <a href="{{route('blogs.edit',$blog->id)}}" class="btn btn-warning">Edit</a> --}}
+    						<a href="{{route('bloodgroups.edit',$bloodgroup->id)}}" class="btn btn-warning">Edit</a>
                             
                             <form method="post" action="{{route('bloodgroups.destroy',$bloodgroup->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf

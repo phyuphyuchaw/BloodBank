@@ -96,12 +96,12 @@
         </div>
       </div>
 
-      <div class="form-group row">
+{{--       <div class="form-group row">
       <label for="" class="col-sm-2 col-form-label">Posting_date</label>
       <div class="col-sm-6">
         <input type="text" class="form-control" id="" name="postingdate" value="{{ $donor->postingdate }}">
       </div>
-    </div>
+    </div> --}}
 
     <div class="form-group row">
       <div class="col-sm-10">
