@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Donor;
+use App\Bloodgroup;
+use App\Blog;
+use DB;
 
 class PageController extends Controller
 {
     public function home($value='')
   {
     $donors = Donor::all();
-    return view('frontend.home',compact('donors'));
+    $bloodgroups = Bloodgroup::all();
+    return view('frontend.home',compact('donors','bloodgroups'));
   }
 
   public function about($value='')
@@ -25,7 +29,8 @@ class PageController extends Controller
 
   public function blog($value='')
   {
-    return view('frontend.blog');
+    $blogs= Blog::all();
+    return view('frontend.blog',compact('blogs'));
   }
 
   public function login($value='')
@@ -35,7 +40,18 @@ class PageController extends Controller
 
   public function donorinfo($value='')
   {
-    return view('frontend.donorinfo');
+    $bloodgroups= Bloodgroup::all();
+    return view('frontend.donorinfo',compact('bloodgroups'));
+  }
+
+  public function donorlist($id)
+  {
+    //dd($id);
+    $donors = Donor::where([
+    ['status', '=', '1'],
+    ['bloodgroup', '=', $id],
+    ])->get();
+     return view('frontend.donorlist',compact('donors'));
   }
 
   

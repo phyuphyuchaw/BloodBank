@@ -15,7 +15,7 @@
 
 <form action="{{ route('blogs.update',$blog->id) }}" method="post" enctype="multipart/form-data">
     @csrf
-    @method('put')
+    @method('PUT')
 
     <input type="hidden" name="oldphoto" id="" value="{{ $blog->photo }}">
 
@@ -39,17 +39,17 @@
     <div class="form-group row">
       <label for="" class="col-sm-2 col-form-label">Posts</label>
       <div class="col-sm-6">
-      <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message">{{$blog->post}}</textarea>
+      <textarea name="post" id="" cols="30" rows="7" class="form-control" placeholder="Message">{{$blog->post}}</textarea>
     </div>
     </div>
 
-      
+
+
+    <div class="form-group">
     
-    <div class="form-group row">
-      <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary">Update</button>
-      </div>
+      <input type="submit" name="" value="Update" class="btn btn-success" id="">
     </div>
+
   </form>
 </div>
 @endsection

@@ -4,9 +4,9 @@
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
          
             <div class="col">
-            <h1 class="h3 mb-0 text-gray-800">Blog</h1>
+            <h1 class="h3 mb-0 text-danger">Blog</h1>
             <div class="float-right align-items-right justify-content-between mb-4">
-            <a href="{{route('blogs.create')}}" class="btn btn-success">Add New</a>
+            <a href="{{route('blogs.create')}}" class="btn btn-danger">Add New</a>
 
             
         </div>
@@ -16,7 +16,7 @@
     <div class="row">
     	<div class="col-md-12">
     		<table class="table table-bordered">
-    			<thead class="thead-dark">
+    			<thead class="bg-danger text-light">
     				<tr>
     					<th>No</th>
     					<th>Photo</th>

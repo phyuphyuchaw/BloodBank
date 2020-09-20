@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
+
 class BlogController extends Controller
 {
     /**
@@ -67,7 +68,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-      return view('backend.blogs.edit',compact('blog'));
+     
     }
 
     /**
@@ -78,6 +79,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
+        
       return view('backend.blogs.edit',compact('blog'));
 
     }

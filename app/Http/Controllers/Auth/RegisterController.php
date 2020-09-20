@@ -73,4 +73,21 @@ class RegisterController extends Controller
         $user->assignRole('Donor');
         return $user;
     }
+    protected function redirectTo()
+    {
+        $roles = auth()->user()->getRoleNames();
+
+        // Check user role
+        switch ($roles[0]) {
+            case 'Admin':
+                    return 'home';
+                break;
+            case 'Donor':
+                    return 'donorinfo';
+                break; 
+            default:
+                    return '/';  
+                break;
+            }
+    }
 }

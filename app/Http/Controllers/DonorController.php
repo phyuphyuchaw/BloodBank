@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Donor;
+/*use Auth;
+*/use Illuminate\Support\Facades\Auth;
+
+
 class DonorController extends Controller
 {
+    
+
     /**
      * Display a listing of the resource.
      *
@@ -39,26 +46,26 @@ class DonorController extends Controller
     public function store(Request $request)
     {
          $request->validate([
-            "name"=>'required',
             "age"=>'required',
             "gender" =>'required',
-            "bloodgroup" =>'required', 
+            "blood_type" =>'required', 
             "phone" =>'required',
             "address" =>'required', 
             "photo" =>'required'
 
         ]);
-        //If include file,upload file
+/*         dd($request);
+*/        //If include file,upload file
         $imageName = time().'.'.$request->photo->extension();
-        $request->photo->move(public_path('backend/donorimg'),$imageName);
+        $request->photo->move(public_path('backend/donorimg/'),$imageName);
         $path='backend/donorimg/'.$imageName;
 
         //Data insert
         $donor = new Donor;
-        $donor->name =$request->name;
+        $donor->user_id =Auth::id();
         $donor->age =$request->age;
         $donor->gender =$request->gender;
-        $donor->bloodgroup =$request->bloodgroup;
+        $donor->bloodgroup =$request->blood_type;
         $donor->phone =$request->phone;
         $donor->address =$request->address;
         $donor->photo =$path;
@@ -66,6 +73,24 @@ class DonorController extends Controller
 
         //redirect
         return redirect()->route('donors.index');
+    }
+
+    public function donor_unavailable(Request $request){
+        $id =$request->donor_id;
+        $donor = Donor::find($id);
+        $donor->status=0;
+        $donor->save();
+        return 'successfully';
+
+    }
+
+       public function donor_available(Request $request){
+        $id =$request->donor_id;
+        $donor = Donor::find($id);
+        $donor->status=1;
+        $donor->save();
+        return 'successfully';
+
     }
 
     /**
@@ -86,10 +111,10 @@ class DonorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Donor $donor)
+    /*public function edit(Donor $donor)
     {
       return view('backend.donors.edit',compact('donor'));
-    }
+    }*/
 
     /**
      * Update the specified resource in storage.
@@ -98,48 +123,14 @@ class DonorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Donor $donor)
+    /*public function update(Request $request,Donor $donor)
     {
-        $request->validate([
-            "name"=>'required',
-            "age"=>'required',
-            "gender" =>'required',
-            "bloodgroup" =>'required', 
-            "phone" =>'required',
-            "email" =>'required',
-            "address" =>'required', 
-            "photo" =>'sometimes',
-            "oldphoto" => 'required'
-    ]);
-
-        if($request->hasFile('photo')){
-
-        $imageName = time().'.'.$request->photo->extension();
-
-        $request->photo->move(public_path('backend/donorimg'),$imageName);
-
-        $path='backend/donorimg/'.$imageName;
-
-
-        }else{
-            $path = $request->oldphoto;
-
-        }
-        //data update
-        $donor->name =$request->name;
-        $donor->age =$request->age;
-        $donor->gender =$request->gender;
-        $donor->bloodgroup =$request->bloodgroup;
-        $donor->phone =$request->phone;
-        $donor->email =$request->email;
-        $donor->address =$request->address;
-        $donor->photo =$path;
-        $donor->save();
+       
 
         //redirect
         return redirect()->route('donors.index');
     }
-
+*/
     /**
      * Remove the specified resource from storage.
      *

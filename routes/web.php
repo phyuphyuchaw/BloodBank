@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','PageController@home')->name('homepage');
-
+ 
 Route::get('about','PageController@about')->name('aboutpage');
 
 Route::get('contact','PageController@contact')->name('contactpage');
@@ -24,17 +24,20 @@ Route::get('detail','PageController@detail')->name('detailpage');
 
 Route::get('donorinfo','PageController@donorinfo')->name('donorinfopage');
 
-Route::get('loginform','PageController@login')->name('loginpage');
+Route::get('donorlist/{id}','PageController@donorlist')->name('donorlistpage');
 
 
-Route::get('/home', 'HomeController@index')->name('home');
-  
 
-Route::get('registerform','PageController@register')->name('registerpage');
+Route::post('donor_unavailable','DonorController@donor_unavailable')->name('donor_unavailable');
 
+Route::post('donor_available','DonorController@donor_available')->name('donor_available');
 
 // backend
+
+Route::middleware('auth')->group(function()
+{
 Route::resource('donors','DonorController');
+});
 
 Route::middleware('role:Admin')->group(function()
 {

@@ -15,8 +15,7 @@ class CreateBloodgroupsTable extends Migration
     {
         Schema::create('bloodgroups', function (Blueprint $table) {
             $table->id();
-            $table->string('bloodtype');
-            $table->string('unit');
+            $table->string('bloodgroup');
             $table->timestamps();
         });
     }

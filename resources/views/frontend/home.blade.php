@@ -1,40 +1,29 @@
     @extends('frontendtemplate')
     @section('content')
 
-    {{-- <section class="hero-wrap js-fullheight" style="background-image: url('images/bg_3.jpg');" data-section="home" data-stellar-background-ratio="0.5"> --}}
-      <div class="overlay"></div>
+    <section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
       <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
-          <div class="col-md-6 pt-5 ftco-animate">
-            <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="small mb-1" for="blood-select">Search for donor with blood group</label>
-
-                              <select id="blood-select">
-                                <optgroup label="RH+">
-                                  <option>A+</option>
-                                  <option>B+</option>
-                                  <option>O+</option>
-                                  <option>AB+</option>
-                                </optgroup>
-                                <optgroup label="RH-">
-                                  <option>A-</option>
-                                  <option>B-</option>
-                                  <option>O-</option>
-                                  <option>AB-</option>
-                                </optgroup>
-                              </select>
-                            </div>
-
-      <div class="form-group row">
-      <div class="col-sm-10">
-        <button class="btn btn-primary" name="searchBtn">Search</button>
-      </div>
-    </div>
-                    </div>
-                  </div>
-                </div>
+        <div class="row d-flex">
+          <div class="col-md-6 col-lg-5 d-flex">
+            <div class="img d-flex align-self-stretch align-items-center">
+              <img src="../image/blood.jpg" width="500" height="500">
             </div>
           </div>
-{{--     </section>  
- --}}@endsection
+          <div class="col-md-6 col-lg-7 pl-lg-5 py-md-5">
+            <div class="py-md-5">
+              <div class="row justify-content-start pb-3">
+                <div class="col-md-12 heading-section ftco-animate p-4 p-lg-5">
+                  <div class="form-group">
+                    <label class="small mb-1" for="blood-select"><h4 class="text-danger">Search for donor with blood group:</h4></label>
+                    @foreach($bloodgroups as $bloodgroup)
+                    <a href="{{route('donorlistpage',$bloodgroup->id)}}"><h5 class="text-danger">{{$bloodgroup->bloodgroup}}</h5></a>
+                    @endforeach
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    @endsection

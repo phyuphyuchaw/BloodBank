@@ -15,23 +15,10 @@
     
 
     <div class="form-group row">
-        <label for="" class="col-sm-2 col-form-label">Bloodtype</label>
+        <label for="" class="col-sm-2 col-form-label">Bloodgroup</label>
         <div class="col-sm-6">
-                              <select id="blood-select" name="bloodtype">
-                                <optgroup label="RH+">
-                                  <option>A+</option>
-                                  <option>B+</option>
-                                  <option>O+</option>
-                                  <option>AB+</option>
-                                </optgroup>
-                                <optgroup label="RH-">
-                                  <option>A-</option>
-                                  <option>B-</option>
-                                  <option>O-</option>
-                                  <option>AB-</option>
-                                </optgroup>
-                              </select>
-                            </div>
+          <input type="text" name="bloodgroup">
+         </div>
         @error('bloodgroup')
       <label class="text-danger">Please choose !</label>
       @enderror

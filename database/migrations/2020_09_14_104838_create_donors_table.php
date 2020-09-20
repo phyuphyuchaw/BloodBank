@@ -22,7 +22,7 @@ class CreateDonorsTable extends Migration
             $table->string('phone');
             $table->string('address');
             $table->text('photo');
-            $table->date('postingdate');
+            $table->integer('status')->default(1);
             $table->timestamps();
             $table->foreign('user_id')
                     ->references('id')

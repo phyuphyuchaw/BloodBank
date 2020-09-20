@@ -20,6 +20,11 @@ class User extends Authenticatable
         'name', 'email','phone','password',
     ];
 
+public function donor($value='')
+{
+    return $this->hasOne('App\Donor');
+}
+
     /**
      * The attributes that should be hidden for arrays.
      *

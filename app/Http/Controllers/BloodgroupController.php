@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Bloodgroup;
+
 class BloodgroupController extends Controller
 {
     /**
@@ -14,7 +15,6 @@ class BloodgroupController extends Controller
     public function index()
     {
         $bloodgroups =Bloodgroup::all();
-        //dd($items);
         return view('backend.bloodgroups.index',compact('bloodgroups'));
     }
 
@@ -37,14 +37,12 @@ class BloodgroupController extends Controller
     public function store(Request $request)
     {
          $request->validate([
-            "bloodtype" =>'required',
-            "unit" =>'required'
+            "bloodgroup" =>'required',
         ]);
 
         //Data insert
         $bloodgroup = new Bloodgroup;
-        $bloodgroup->bloodtype =$request->bloodtype;
-        $bloodgroup->unit =$request->unit;
+        $bloodgroup->bloodgroup =$request->bloodgroup;
         $bloodgroup->save();
 
         //redirect
@@ -59,7 +57,7 @@ class BloodgroupController extends Controller
      */
     public function show($id)
     {
-       return view('backend.bloodgroups.edit',compact('bloodgroup'));
+      
     }
 
     /**
@@ -70,7 +68,8 @@ class BloodgroupController extends Controller
      */
     public function edit(Bloodgroup $bloodgroup)
     {
-              return view('backend.bloodgroups.edit',compact('bloodgroup'));
+       
+        return view('backend.bloodgroups.edit',compact('bloodgroup'));
     }
 
     /**
@@ -83,17 +82,16 @@ class BloodgroupController extends Controller
     public function update(Request $request,Bloodgroup $bloodgroup)
     {
         $request->validate([
-            "bloodtype" =>'required',
-            "unit" =>'required'
+            "bloodgroup" =>'required',
 
     ]);
         //data update
-        $bloodgroup->bloodtype =$request->bloodtype;
-        $bloodgroup->unit =$request->unit;
+        $bloodgroup->bloodgroup =$request->bloodgroup;
         $bloodgroup->save();
 
         //redirect
-        return redirect()->route('bloodgroups.index');    }
+        return redirect()->route('bloodgroups.index');    
+    }
 
     /**
      * Remove the specified resource from storage.
