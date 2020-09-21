@@ -10,11 +10,19 @@ use DB;
 
 class PageController extends Controller
 {
-    public function home($value='')
+  public function home($value='')
   {
     $donors = Donor::all();
     $bloodgroups = Bloodgroup::all();
     return view('frontend.home',compact('donors','bloodgroups'));
+  }
+
+  public function showLogin (){
+        return view('frontend.login');
+  }
+
+   public function showRegister (){
+    return view('frontend.register');
   }
 
   public function about($value='')
@@ -33,10 +41,13 @@ class PageController extends Controller
     return view('frontend.blog',compact('blogs'));
   }
 
-  public function login($value='')
+  public function detail($value='')
   {
-    return view('frontend.login');
+    $blogs= Blog::all();
+    return view('frontend.detail',compact('blogs'));
   }
+
+
 
   public function donorinfo($value='')
   {
@@ -48,10 +59,10 @@ class PageController extends Controller
   {
     //dd($id);
     $donors = Donor::where([
-    ['status', '=', '1'],
-    ['bloodgroup', '=', $id],
+      ['status', '=', '1'],
+      ['bloodgroup', '=', $id],
     ])->get();
-     return view('frontend.donorlist',compact('donors'));
+    return view('frontend.donorlist',compact('donors'));
   }
 
   

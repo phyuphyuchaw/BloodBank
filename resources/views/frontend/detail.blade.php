@@ -11,13 +11,12 @@
       <div class="row">
         @foreach($blogs as $blog)
         <div class="col-3">
-          <div class="card" style="width: 15rem;">
+          <div style="width: 15rem;">
             <img src="{{$blog->photo}}" class="card-img-top" alt="..." width="100px" height="100px">
-            <div class="card-body">
-              <h5 class="card-text">{{$blog->headline}}</h5>
-              <a href="{{route('detailpage')}}" class="btn btn-warning">Detail</a>
-                            
-{{--               <p class="card-text text-dark">{{$blog->post}}</p> --}}
+            <div>
+              <h5 >{{$blog->headline}}</h5>
+             <p class=" text-dark">{{$blog->post}}</p>
+
             </div>
           </div>
         </div>

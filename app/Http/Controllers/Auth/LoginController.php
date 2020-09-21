@@ -38,7 +38,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    protected function redirectTo()
+    /*protected function redirectTo()
     {
         $roles = auth()->user()->getRoleNames();
 
@@ -48,11 +48,11 @@ class LoginController extends Controller
                     return 'home';
                 break;
             case 'Donor':
-                    return 'donors';
+                    return 'home';
                 break; 
             default:
                     return '/';  
                 break;
             }
-}
+}*/
 }

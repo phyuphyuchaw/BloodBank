@@ -6,7 +6,7 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <div class="row">
             <div class="col">
-            <h1 class="h3 mb-0 text-gray-800">Blog Edit</h1>
+            <h1 class="h3 mb-0 ">Blog Edit</h1>
             
 
         </div>

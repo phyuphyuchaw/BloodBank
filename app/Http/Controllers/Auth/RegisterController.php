@@ -73,7 +73,7 @@ class RegisterController extends Controller
         $user->assignRole('Donor');
         return $user;
     }
-    protected function redirectTo()
+   /* protected function redirectTo()
     {
         $roles = auth()->user()->getRoleNames();
 
@@ -89,5 +89,5 @@ class RegisterController extends Controller
                     return '/';  
                 break;
             }
-    }
+    }*/
 }

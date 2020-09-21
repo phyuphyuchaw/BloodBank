@@ -16,7 +16,7 @@
     <div class="row">
     	<div class="col-md-12">
     		<table class="table table-bordered">
-    			<thead class="bg-danger text-light">
+    			<thead class="bg-danger">
     				<tr>
     					<th>No</th>
     					<th>Photo</th>

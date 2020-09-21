@@ -40,7 +40,7 @@
      <td>{{$donor->address}}</td>
      <td><img src="{{asset($donor->photo)}}" width=100 height=100></td>
      <td>
-       @role('Admin')
+       @role('Donor')
         @if($donor->status == 1 )
         <button class="btn btn-success btn_unavailable" data-donor_id="{{$donor->id}}">Available</button>
 

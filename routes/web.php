@@ -26,6 +26,9 @@ Route::get('donorinfo','PageController@donorinfo')->name('donorinfopage');
 
 Route::get('donorlist/{id}','PageController@donorlist')->name('donorlistpage');
 
+Route::get('loginform','PageController@showLogin')->name('loginpage');
+
+Route::get('registerform','PageController@showRegister')->name('registerpage');
 
 
 Route::post('donor_unavailable','DonorController@donor_unavailable')->name('donor_unavailable');

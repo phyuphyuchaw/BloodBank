@@ -24,7 +24,7 @@
       @enderror
         </div>
 
-      <div class="form-group row">
+{{--       <div class="form-group row">
       <label for="" class="col-sm-2 col-form-label">Unit </label>
       <div class="col-sm-6">
         <input type="text" class="form-control" id="" name="unit">
@@ -33,7 +33,7 @@
       @enderror
       </div>
     </div>
-    
+     --}}
 
     <div class="form-group row">
       <div class="col-sm-10">
